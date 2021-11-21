@@ -15,7 +15,11 @@ class LogoQuizViewUpdater: ViewUpdater {
                     rootView.updateView(state.currentScreen.buildView(rootView.getContext()))
                 }
                 Action.GetRandomQuizData -> {
-
+                    val randomQuizData = rootView.getRandomQuizData()
+                    randomQuizData?.let {
+                        (rootView.currentView() as LogoQuizView).updateRandomQuizData(it)
+                        (rootView.currentView() as LogoQuizView).setJumbledAlphabetList(rootView.getJumbledAlphabetList())
+                    }
                 }
             }
         }

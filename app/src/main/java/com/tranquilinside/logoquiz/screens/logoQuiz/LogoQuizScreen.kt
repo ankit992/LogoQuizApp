@@ -30,7 +30,7 @@ class LogoQuizScreen: Screen {
         return LogoQuizView(context).also {
             it.eventsObservable().subscribe { event ->
                 when (event) {
-                    LogoQuizViewEvents.GetRandomQuizData -> events.onNext(Event.LoadData)
+                    LogoQuizViewEvents.GetRandomQuizData -> events.onNext(Event.LoadRandomQuizData)
                 }
             }
         }

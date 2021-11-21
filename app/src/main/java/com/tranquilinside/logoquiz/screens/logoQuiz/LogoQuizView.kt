@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import com.tranquilinside.logoquiz.R
+import com.tranquilinside.logoquiz.entities.LogoQuizItem
 import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
 
@@ -18,6 +19,10 @@ class LogoQuizView: LinearLayout, LogoQuizViewInterface {
 
     fun eventsObservable(): Observable<LogoQuizViewEvents> = events.hide().share()
 
+    fun updateRandomQuizData(randomQuizData: LogoQuizItem) {
+        //to set image url
+    }
+
 
     init {
         this.layoutParams = LayoutParams(
@@ -28,5 +33,9 @@ class LogoQuizView: LinearLayout, LogoQuizViewInterface {
         Handler().postDelayed(
             { events.onNext(LogoQuizViewEvents.GetRandomQuizData) }, 200
         )
+    }
+
+    override fun setJumbledAlphabetList(jumbledAlphabetList: List<Char>) {
+        // to set jumbled characters for rv_keyboard here
     }
 }
