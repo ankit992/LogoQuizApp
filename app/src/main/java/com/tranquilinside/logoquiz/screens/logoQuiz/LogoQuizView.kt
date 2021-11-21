@@ -35,7 +35,7 @@ class LogoQuizView: LinearLayout, LogoQuizViewInterface {
         )
     }
 
-    override fun setJumbledAlphabetList(jumbledAlphabetList: List<Char>) {
+    override fun setJumbledAlphabetList(jumbledAlphabetList: String) {
         // to set jumbled characters for rv_keyboard here
     }
 }

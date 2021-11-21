@@ -19,6 +19,7 @@ class LogoQuizViewUpdater: ViewUpdater {
                     randomQuizData?.let {
                         (rootView.currentView() as LogoQuizView).updateRandomQuizData(it)
                         (rootView.currentView() as LogoQuizView).setJumbledAlphabetList(rootView.getJumbledAlphabetList())
+                        events.onNext(Event.UpdateCurrentQuizData(it))
                     }
                 }
             }

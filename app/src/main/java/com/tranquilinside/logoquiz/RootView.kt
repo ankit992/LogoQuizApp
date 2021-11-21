@@ -11,5 +11,5 @@ interface RootView {
     fun showProgressBar()
     fun hideProgressBar()
     fun getRandomQuizData(): LogoQuizItem?
-    fun getJumbledAlphabetList(): List<Char>
+    fun getJumbledAlphabetList(): String
 }
